@@ -17,6 +17,7 @@ class Person:
 person1 = Person("Max", 25)
 person2 = Person("Lorenz", 30)
 person3 = Person("Jonas", 15)
+person4 = Person("Peter", 67)
 
 print(person1.vorstellen())
 print(person2.vorstellen())
