@@ -9,7 +9,11 @@ song_3 = ["Dance Monkey", "Tones and I", 3_400_000_000]
 #TODO: Aufgabe 1: 
 #   Definiere die Klasse "Song" mit einem Konstruktor (__init__),
 #  der die Attribute titel, künstler und streams initialisiert.
-
+class Song:
+    def __init__(self,titel,künstler,streams):
+        self.titel = titel
+        self.künstler = künstler
+        self.streams = streams
 # TODO: Aufgabe 2:
 #   Erstelle drei Objekte der Klasse "Song" mit den Informationen aus der Liste oben
 
