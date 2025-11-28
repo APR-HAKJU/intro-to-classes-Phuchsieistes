@@ -48,5 +48,11 @@ auto_3.zeige_info()
 
 # TODO: Lass das Auto dreimal fahren
 
+auto_1.fahren()
+auto_1.fahren()
+auto_2.fahren()
+auto_3.fahren()
 
 # TODO: Zeige die Info erneut
+
+auto_1.zeige_info()
