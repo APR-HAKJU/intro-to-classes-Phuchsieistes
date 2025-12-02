@@ -40,13 +40,19 @@ class Kaffemaschine:
         print("Kaffe wird gemacht! :)")
         self.wasserstand -= menge
         print(f"Neuer Wasserstand: {self.wasserstand}")
-      def nachfüllen(self,menge):
-         self.wasserstand += menge
-         print(f"{menge} ml nachgefüllt!")
-        
+    def nachfüllen(self,menge):
+        self.wasserstand += menge
+        print(f"{menge} ml nachgefüllt!")
+    def info(self):
+      print(self.wasserstand)
 
 kaffemaschine_1 = Kaffemaschine(500)
-kaffemaschine_1.kaffe_machen(100)
+kaffemaschine_1.info()
+kaffemaschine_1.kaffe_machen(200)
+kaffemaschine_1.kaffe_machen(200)
+kaffemaschine_1.kaffe_machen(200)
+kaffemaschine_1.nachfüllen(500)
+kaffemaschine_1.kaffe_machen(200)
 
 # TODO: Erstelle eine Kaffeemaschine mit 500ml Wasser
 
