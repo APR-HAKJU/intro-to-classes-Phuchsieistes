@@ -33,16 +33,51 @@ Beide Songs haben denselben Datentyp: True
 ▶️ Song 'Neon Lights' wird gespielt...
 ▶️ Song 'Ocean Wave' wird gespielt...
 """
-
 # TODO: Importiere die Klasse Song aus 05_song
 # from 05_song import Song
-
+from song import Song
+song_1 = Song("Africa", ["Toto"])
+song_1.zeige_info()
 
 # TODO: Erstelle verschiedene Variablen mit unterschiedlichen Datentypen
 # text = "Hallo"
 # zahl = 42
 # liste = [1, 2, 3]
+text = "Hallo"
+zahl = 42
+liste = [1, 2, 3]
 
+print(type(text))
+print(type(zahl))
+print(type(liste))
+print(type(song_1))
+
+class Laptop:
+    pass
+Laptop1 = Laptop()
+Laptop2 = Laptop()
+
+print(type(Laptop1))
+print(f"Datentype von Laptop 2: {type(Laptop2)}")
+
+song_2 = Song("Billie Jean", ["Michael Jackson"])
+print(f"Datentype von Song 2: {type(song_2)}")
+
+liste_songs = [song_1, song_2]
+print(liste_songs[0].titel)
+print(liste_songs[0].zeige_info())
+print(liste_songs[0].interpreten)
+print(liste_songs[1].titel)
+print(liste_songs[1].interpret_hinzufuegen("DJ Elion"))
+
+song_3 = Song("Fein","Travis Scott")
+liste_songs.append(song_3)
+
+song_4 = Song("brick by brick", "Emagency")
+liste_songs.append(song_4)
+
+for x in liste_songs:
+    print(x.titel)
 
 # TODO: Erstelle 3 Song-Objekte mit Titeln und Interpreten deiner Wahl
 
