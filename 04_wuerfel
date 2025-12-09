@@ -18,9 +18,18 @@ Wichtig: Verwende das 'random' Modul für die Zufallszahlen!
 # TODO 0: Importiere das random Modul
 # import random
 
+import random
+
 
 # TODO 1: Erstelle die Klasse Wuerfel
 class Wuerfel:
+    def __init__(self,seiten,name):
+        self.seiten = seiten
+        self.name = name
+    def werfen(self):
+        return random.randint(1, self.seiten())
+    def zeige_info(self):
+        print(f"{self.name} (1-{self.seiten})")
     """
     Ein Würfel mit einer bestimmten Anzahl an Seiten.
     
@@ -47,14 +56,26 @@ class Wuerfel:
 
 # TODO 2: Erstelle die Klasse Spieler
 class Spieler:
-    """
-    Ein Spieler der würfeln und Punkte sammeln kann.
-    
-    Attribute:
-    - name (str): Name des Spielers
-    - punkte (int): Aktuelle Gesamtpunktzahl
-    - wuerfe (list): Liste aller geworfenen Zahlen
-    """
+    def __init__(self,name,punkte,wuerfe):
+        punkte = 0
+        wuerfe = []
+        self.name = name
+        self.punkte = punkte
+        self.wuerfe = wuerfe
+    def wuerfeln(self, wuerfel):
+        wurf = Wuerfel.werfen()
+        wuerfel.append(wurf)
+        self.punkte += wurf
+        print(f"🎲 {self.name} würfelt mit {wuerfel.name}: {wurf}")
+    def zeige_statistik(self):
+        print(f"\n📊 Statistik für {self.name}:")
+        print(f"Anzahl Würfe: {len(self.wuerfe)}")
+        print(f"Gesamtpunkte: {self.punkte}")
+        print(f"Alle Würfe: {self.wuerfe}")
+    def punkte_zuruecksetzen(self):
+        self.punkte = 0
+        self.wuerfe = []
+        print(f"🔄 {self.name}: Punkte zurückgesetzt")
     
     # TODO 2.1: Schreibe den Konstruktor __init__
     # Parameter: self, name
@@ -92,31 +113,39 @@ class Spieler:
 # TODO 3.1: Erstelle zwei Würfel-Objekte
 # w6 = Wuerfel(6, "W6")
 # w20 = Wuerfel(20, "W20")
-pass
+w6 = Wuerfel(6, "W6")
+w20 = Wuerfel(20, "W20")
 
 # TODO 3.2: Zeige die Würfel-Infos
 # w6.zeige_info()
 # w20.zeige_info()
-pass
+w6.zeige_info()
+w20.zeige_info()
 
 # TODO 3.3: Erstelle einen Spieler
 # spieler = Spieler("Anna")
-pass
 
+spieler = Spieler("Anna", 0, [])
 # TODO 3.4: Lass den Spieler 3x mit W6 würfeln
 # spieler.wuerfeln(w6)
 # spieler.wuerfeln(w6)
 # spieler.wuerfeln(w6)
-pass
+
+spieler.wuerfeln(w6)
+spieler.wuerfeln(w6)
+spieler.wuerfeln(w6)
 
 # TODO 3.5: Lass den Spieler 2x mit W20 würfeln
 # spieler.wuerfeln(w20)
 # spieler.wuerfeln(w20)
-pass
+
+spieler.wuerfeln(w20)
+spieler.wuerfeln(w20)
 
 # TODO 3.6: Zeige die Statistik
 # spieler.zeige_statistik()
-pass
+
+spieler.zeige_statistik()
 
 
 """
