@@ -54,8 +54,7 @@ class Einkaufswagen:
         return gesamtsumme
     
     def anzahl_artikel(self):
-        anzahl = len(self.artikel)
-        return anzahl
+        return len(self.artikel)
     
     def zeige_inhalt(self):
         print(f"Einkaufswagen {self.anzahl_artikel} Artikel:")
