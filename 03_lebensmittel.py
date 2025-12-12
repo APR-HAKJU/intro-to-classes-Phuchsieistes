@@ -124,3 +124,4 @@ Einkaufswagen (3 Artikel):
 - Käse: 4.50 EUR
 Gesamtpreis: 8.98 EUR
 """
+
